@@ -1,6 +1,6 @@
 <?php head('Регистрация'); ?>
 
-<form class="form-horizontal" role="form" method="post" id="register_form">
+<form class="form-horizontal" role="form" method="post" id="register_form" action="/account">
     <input type="hidden" name="registration_form" value="Y">
     <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Имя</label>
@@ -24,9 +24,9 @@
         <label for="country" class="col-sm-2 control-label">Страна</label>
         <div class="col-sm-10">
             <select name="country" id="country"  class="form-control">
-                <option value="ukraine">Украина</option>
-                <option value="belarus">Беларусь</option>
-                <option value="kazakhstan">Казахстан</option>
+                <option value="1">Украина</option>
+                <option value="2">Беларусь</option>
+                <option value="3">Казахстан</option>
             </select>
         </div>
     </div>

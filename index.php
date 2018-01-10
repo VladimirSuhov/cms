@@ -5,8 +5,6 @@ session_start();
 
 $CONNECT = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-//echo $CONNECT ? 'Connected' : 'Connection error';
-
 if ( $_SERVER['REQUEST_URI'] == '/') {
     $Page = 'index';
     $Module = 'index';
@@ -29,7 +27,7 @@ if ( $_SERVER['REQUEST_URI'] == '/') {
 if ( $Page == 'index' ) include('template-parts/index.php');
 elseif ( $Page == 'login' ) include('template-parts/login.php');
 elseif ( $Page == 'register' ) include('template-parts/register.php');
-elseif ( $Page == 'account' ) include('template-parts/account/account.php');
+elseif ( $Page == 'account' ) include('includes/handlers/register.php');
 
 
 function head( $title ) {

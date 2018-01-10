@@ -5,14 +5,14 @@ $(document).ready(function () {
         let data = $(this).serialize();
         $.ajax({
             type : 'post',
-            url: '/includes/handlers/register.php',
+            url: '/account',
             data : data,
             dataType : 'json',
             success : function (res) {
-                console.log(res.success);
+                console.log(res);
             },
             error : function(res) {
-                console.log(res.error);
+                console.log(res);
             }
         })
     }
