@@ -28,6 +28,7 @@ if ( $Page == 'index' ) include('template-parts/index.php');
 elseif ( $Page == 'login' ) include('template-parts/login.php');
 elseif ( $Page == 'register' ) include('template-parts/register.php');
 elseif ( $Page == 'account' ) include('includes/handlers/register.php');
+elseif ( $Page == 'captcha' ) include('includes/handlers/captcha.php');
 
 
 function head( $title ) {

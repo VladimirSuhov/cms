@@ -1,6 +1,7 @@
 <?php head('Регистрация'); ?>
 
 <form class="form-horizontal" role="form" method="post" id="register_form" action="/account">
+    <?php messageShow();?>
     <input type="hidden" name="registration_form" value="Y">
     <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Имя</label>
@@ -49,6 +50,11 @@
                     <input type="checkbox"> Запомнить меня
                 </label>
             </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <img src="/includes/handlers/captcha.php" alt="Captcha">
         </div>
     </div>
     <div class="form-group">
