@@ -16,11 +16,14 @@ if ( $_SERVER['REQUEST_URI'] == '/') {
     $Module = array_shift($URL_Parts);
 
     if( !empty($Module) ) {
+
         $Params = array();
 
+
         for ( $i = 0; $i < count($URL_Parts); $i++ ) {
-            $Params[[$URL_Parts][$i]] = $URL_Parts[++$i];
+//            $Params[[$URL_Parts][$i]] = $URL_Parts[++$i];
         }
+
     }
 }
 
@@ -28,7 +31,6 @@ if ( $Page == 'index' ) include('template-parts/index.php');
 elseif ( $Page == 'login' ) include('template-parts/login.php');
 elseif ( $Page == 'register' ) include('template-parts/register.php');
 elseif ( $Page == 'account' ) include('includes/handlers/register.php');
-elseif ( $Page == 'captcha' ) include('includes/handlers/captcha.php');
 
 
 function head( $title ) {

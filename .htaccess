@@ -1,8 +1,9 @@
-RewriteEngine On
-
+RewriteEngine on
 RewriteBase /
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^includes/handlers/(.*)$ includes/handlers/$1 [L]
-RewriteRule (.*) index.php?$1 [L,QSA]
+Options All -Indexes
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^resource/(.*)$ resource/$1 [L]
+RewriteRule ^.*$ [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

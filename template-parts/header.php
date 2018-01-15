@@ -13,6 +13,7 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
           crossorigin="anonymous">
 
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
 <div class="container">

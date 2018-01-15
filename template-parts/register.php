@@ -12,7 +12,7 @@
     <div class="form-group">
         <label for="login" class="col-sm-2 control-label">Логин</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="login" name="login" placeholder="Логин" required>
+            <input type="text" class="form-control" id="login" pattern="[A-Za-z-0-9](3,10)" title="не менее 3 и не более 10 латинских символов или цифр" name="login" placeholder="Логин" required>
         </div>
     </div>
     <div class="form-group">
@@ -54,7 +54,10 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <img src="/includes/handlers/captcha.php" alt="Captcha">
+            <input type="text" name="captcha" value="" class="captchafield">
+        </div>
+        <div class="col-sm-offset-2 col-sm-10">
+            <img src="/resource/captcha.php" alt="Captcha">
         </div>
     </div>
     <div class="form-group">
