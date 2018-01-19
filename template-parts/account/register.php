@@ -1,6 +1,6 @@
 <?php head('Регистрация'); ?>
 
-<form class="form-horizontal" role="form" method="post" id="register_form" action="/account">
+<form class="form-horizontal" role="form" method="post" id="register_form" action="/account/register/">
     <?php messageShow();?>
     <input type="hidden" name="registration_form" value="Y">
     <div class="form-group">
@@ -12,7 +12,7 @@
     <div class="form-group">
         <label for="login" class="col-sm-2 control-label">Логин</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="login" pattern="[A-Za-z-0-9](3,10)" title="не менее 3 и не более 10 латинских символов или цифр" name="login" placeholder="Логин" required>
+            <input type="text" class="form-control" id="login" name="login" placeholder="Логин" required>
         </div>
     </div>
     <div class="form-group">
@@ -34,7 +34,7 @@
     <div class="form-group">
         <label for="password" class="col-sm-2 control-label">Пароль</label>
         <div class="col-sm-10">
-            <input type="password" class="form-control" id="password" placeholder="Пароль" required>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Пароль" required>
         </div>
     </div>
     <div class="form-group">
@@ -43,15 +43,7 @@
             <input type="file" class="form-control" id="avatar" name="avatar" placeholder="Аватар">
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> Запомнить меня
-                </label>
-            </div>
-        </div>
-    </div>
+
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <input type="text" name="captcha" value="" class="captchafield">

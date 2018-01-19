@@ -13,7 +13,7 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
           crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
 </head>
 <body>
 <div class="container">
@@ -32,8 +32,12 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">Главная</a></li>
-                    <li><a href="/login">Вход</a></li>
-                    <li><a href="/register">Регистрация</a></li>
+                    <?php if( $_SESSION['USER_LOGGED_IN'] !==1 ): ?>
+                        <li><a href="/login">Вход</a></li>
+                        <li><a href="/register">Регистрация</a></li>
+                    <? else: ?>
+                        <li><a href="/account/logout/">Выход</a></li>
+                    <? endif; ?>
                 </ul>
             </div>
         </div>
