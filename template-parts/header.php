@@ -37,6 +37,7 @@
                         <li><a href="/register">Регистрация</a></li>
                     <? else: ?>
                         <li><a href="/account/logout/">Выход</a></li>
+                        <li><a href="/profile/">Личный кабинет</a></li>
                     <? endif; ?>
                 </ul>
             </div>

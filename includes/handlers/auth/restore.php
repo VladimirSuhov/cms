@@ -7,9 +7,9 @@ if ( $Module == 'restore-password' && $Param['code'] ) {
 
         dd($email );
 
-        echo json_encode( array('succes' => 'true', 'message' => 'Password has been changed' ) );
+        echo json_encode( ['succes' => 'true', 'message' => 'Password has been changed'] );
 
     } else {
-        echo json_encode( array('succes' => 'false', 'message' => 'Go fuck youself, bitch', 'redirect' => '/' ) );
+        echo json_encode( ['succes' => 'false', 'message' => 'Go fuck youself, bitch', 'redirect' => '/' ] );
     }
 }

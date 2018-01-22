@@ -27,7 +27,7 @@ if ( $_SERVER['REQUEST_URI'] == '/') {
 
     if( !empty($Module) ) {
 
-        $Param = array();
+        $Param = [];
 
         for ($i = 0; $i < count($URL_Parts); $i++) {
             $Param[$URL_Parts[$i]] = $URL_Parts[++$i];
@@ -57,10 +57,9 @@ elseif ( $Page == 'account' && $Module == 'restore-password' ) include('includes
 
 elseif ( $Page == 'account' && $Module == 'activate' ) include('includes/handlers/auth/activate.php');
 
+elseif ( $Page == 'profile' && $Module == 'edit') include('includes/handlers/user/edit.php');
+
 elseif ( $Page == 'profile' ) include( 'template-parts/account/profile.php' );
-
-
-
 
 function head( $title ) {
     require_once('template-parts/header.php');

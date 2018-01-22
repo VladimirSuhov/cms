@@ -23,12 +23,12 @@ if ( $_POST['registration_form'] ) {
 
             $row = mysqli_fetch_assoc( mysqli_query( $CONNECT, "SELECT login FROM users WHERE login = '$login'" ) );
             if ($row['login']) {
-                echo json_encode(array('succes' => 'false', 'error' => 'Login ' . $login . ' is already used.'));
+                echo json_encode(['succes' => 'false', 'error' => 'Login ' . $login . ' is already used.']);
             }
 
             $row = mysqli_fetch_assoc( mysqli_query( $CONNECT, "SELECT email FROM users WHERE email = '$email'") );
             if ($row['email']) {
-                echo json_encode( array( 'succes' => 'false','error' => 'Email ' .$email. ' is already used.' ) );
+                echo json_encode( ['succes' => 'false','error' => 'Email ' .$email. ' is already used.' ] );
             }
 
             if ( mysqli_query( $CONNECT, "INSERT INTO users VALUES (NULL, '$login', '$password', '$name', '$email', '$country', '$avatar', NOW(), 0)") )  {
@@ -37,21 +37,21 @@ if ( $_POST['registration_form'] ) {
 
                 mail( $email, 'Регистрация аккаунта', 'Ссылка для активации: http://cms/account/activate/code/' .$code);
 
-                echo json_encode( array('succes' => 'true', 'message' => 'Account created') );
+                echo json_encode( ['succes' => 'true', 'message' => 'Account created'] );
 
             } else {
 
-                echo json_encode( array('succes' => 'false', 'message' => 'Could not create account') );
+                echo json_encode( ['succes' => 'false', 'message' => 'Could not create account'] );
 
                 echo( "Error description: " . mysqli_error( $CONNECT ) );
 
             }
     } else {
-            echo json_encode( array( 'succes' => 'false', 'message' => 'Wrong Captcha' ) );
+            echo json_encode( ['succes' => 'false', 'message' => 'Wrong Captcha'] );
         }
 
     } else {
-        echo json_encode( array( 'succes' => 'false', 'message' => 'Validation error' ) );
+        echo json_encode( ['succes' => 'false', 'message' => 'Validation error'] );
     }
 
 }

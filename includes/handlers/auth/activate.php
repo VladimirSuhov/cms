@@ -12,9 +12,9 @@ if ( $Module == 'activate' && $Param['code'] ) {
 
         header('/');
 
-        echo json_encode( array('succes' => 'true', 'message' => 'Email confirned' ) );
+        echo json_encode( ['succes' => 'true', 'message' => 'Email confirned'] );
 
     } else {
-        echo json_encode( array('succes' => 'false', 'message' => 'Email not confirned', 'redirect' => '/login' ) );
+        echo json_encode( ['succes' => 'false', 'message' => 'Email not confirned', 'redirect' => '/login'] );
     }
 }

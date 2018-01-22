@@ -18,7 +18,7 @@ function messageSend( $p1, $p2 ) {
     if ( $p1 == 1 ) $p1     = 'Ошибка';
     elseif ( $p1 == 2 ) $p1 = 'Подсказка';
     elseif ( $p1 == 2 ) $p1 = 'Информация';
-    $_SESSION['message'] = '<div class="message-box"><b>'.$p1. '</b>' .$p2. '</div>';
+    $_SESSION['message'] = '<div class="message-box"><b> {$p1} </b> {$p2} </div>';
     exit( header('Location: ' .$_SERVER['HTTP_REFERER'] ) );
 }
 
