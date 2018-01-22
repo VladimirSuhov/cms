@@ -43,3 +43,12 @@ function is_logged( $p1 ) {
         echo 'This page is avaliable only for authenticated users';
     }
 }
+
+function upload_avatar( $filename ) {
+    if( $filename['type'] !== 'image/jpeg' || 'image/png') {
+        echo json_encode(['success' => 'false', 'message' => 'Недопустимый формат файла']);
+    }
+    if ( $filename['size'] > 1000000 ) {
+        echo json_encode(['success' => 'false', 'message' => 'Размер файла не должен превышать 1 мб']);
+    }
+}
