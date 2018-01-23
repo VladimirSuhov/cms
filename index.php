@@ -59,7 +59,7 @@ elseif ( $Page == 'account' && $Module == 'activate' ) include('includes/handler
 
 elseif ( $Page == 'profile' && $Module == 'edit') include('includes/handlers/user/edit.php');
 
-elseif ( $Page == 'profile' ) include( 'template-parts/account/profile.php' );
+elseif ( $Page == 'chat' ) include( 'template-parts/chat.php' );
 
 function head( $title ) {
     require_once('template-parts/header.php');

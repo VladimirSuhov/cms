@@ -38,6 +38,7 @@
                     <? else: ?>
                         <li><a href="/account/logout/">Выход</a></li>
                         <li><a href="/profile/">Личный кабинет</a></li>
+                        <li><a href="/chat/">Чат</a></li>
                     <? endif; ?>
                 </ul>
             </div>
