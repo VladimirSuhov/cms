@@ -31,5 +31,9 @@ if ( $Module == 'edit' ) {
             echo json_encode( array( 'succes' => 'false', 'error' => 'Error form validation' ) );
             dd($_POST);
         }
+
+        if(!empty($_FILES['avatar'])) {
+            upload_avatar($_FILES['avatar']);
+        }
     }
 }

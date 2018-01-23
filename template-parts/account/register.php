@@ -1,6 +1,6 @@
 <?php head('Регистрация'); ?>
 
-<form class="form-horizontal" role="form" method="post" id="register_form" action="/account/register/">
+<form class="form-horizontal" enctype="multipart/form-data" role="form" method="post" id="register_form" action="/account/register/">
     <?php messageShow();?>
     <input type="hidden" name="registration_form" value="Y">
     <div class="form-group">

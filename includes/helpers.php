@@ -45,10 +45,36 @@ function is_logged( $p1 ) {
 }
 
 function upload_avatar( $filename ) {
-    if( $filename['type'] !== 'image/jpeg' || 'image/png') {
-        echo json_encode(['success' => 'false', 'message' => 'Недопустимый формат файла']);
-    }
-    if ( $filename['size'] > 1000000 ) {
-        echo json_encode(['success' => 'false', 'message' => 'Размер файла не должен превышать 1 мб']);
+    if ($_FILES['avatar']['tmp_name']) {
+        if ($filename['type'] !== 'image/jpeg') {
+            dd($filename['type']);
+            echo json_encode(['success' => 'false', 'message' => 'Wrong format']);
+        }
+        if ($filename['size'] > 2000000) {
+            echo json_encode(['success' => 'false', 'message' => 'File is too large']);
+        }
+        $image = imagecreatefromjpeg($_FILES['avatar']['tmp_name']);
+        $size = getimagesize($filename['tmp_name']);
+        $tmp = imagecreatetruecolor(120, 120);
+        imagecopyresampled($tmp, $image, 0, 0, 0, 0, 120, 120, $size[0], $size[1]);
+        if ($_SESSION['USER_AVATAR'] == 0) {
+            $files = glob('resource/avatar/*', GLOB_ONLYDIR);
+            foreach ($files as $num => $dir) {
+                $num++;
+                $count = sizeof(glob($dir . '/*.*'));
+                if ($count < 250) {
+                    $download = $dir . '/' . $_SESSION['USER_ID'];
+                    $_SESSION['USER_AVATAR'] = $num;
+                    mysqli_query($CONNECT, "UPDATE users  SET avatar = $num WHERE `id` = $_SESSION[USER_ID]");
+                    break;
+                }
+            }
+        } else {
+            $download = 'resource/avatar/' . $_SESSION['USER_AVATAR'] . '/' . $_SESSION['USER_ID'];
+            imagejpeg($tmp, $download . '.jpg');
+            imagedestroy($image);
+            imagedestroy($tmp);
+            echo json_encode(['success' => 'false', 'message' => 'Image has been uploaded']);
+        }
     }
 }

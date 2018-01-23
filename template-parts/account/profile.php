@@ -25,7 +25,7 @@
         <div class="profile">
         <div class="user col-md-3">
             <figure class="user_avatar">
-                <img src="/resource/img/noavatar.png" alt="avatar">
+                <img src="/resource/avatar/{$avatar}" alt="avatar">
             </figure>
             <div class="user_info">
                 <ul>
@@ -41,7 +41,7 @@
         <div class="clearfix"></div>
 
             <div class="user_info col-sm-6">
-                <form class="form-horizontal" role="form" name="edit_profile" method="post" action="/profile/edit/">
+                <form class="form-horizontal" enctype="multipart/form-data" role="form" name="edit_profile" method="post" action="/profile/edit/">
                     <div class="form-group">
                         <label for="email" class="label">Имя</label>
                         <div class="col-sm-10">
@@ -68,6 +68,13 @@
                         <label for="conform_new_pass" class="label">Повторите овый пароль</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" name="confirm_new_pass" value="" id="confirm_new_pass" placeholder="Новый пароль">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avatar" class="col-sm-2 control-label">Аватар</label>
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" id="avatar" name="avatar" placeholder="Аватар">
                         </div>
                     </div>
 
