@@ -40,6 +40,7 @@
                         <li><a href="/profile/">Личный кабинет</a></li>
                         <li><a href="/chat/">Чат</a></li>
                     <? endif; ?>
+                    <li><a href="/news">Новости</a></li>
                 </ul>
             </div>
         </div>

@@ -59,7 +59,17 @@ elseif ( $Page == 'account' && $Module == 'activate' ) include('includes/handler
 
 elseif ( $Page == 'profile' && $Module == 'edit') include('includes/handlers/user/edit.php');
 
+elseif ( $Page == 'profile') include('template-parts/account/profile.php');
+
 elseif ( $Page == 'chat' ) include( 'template-parts/chat.php' );
+
+elseif ( $Page == 'news') {
+    if (!$Module || $Page == 'news' && $Module == 'category' || $Page == 'news' && $Module == 'main') {
+        include('module/news/main.php');
+    } else {
+        include('module/news/detail.php');
+    }
+}
 
 function head( $title ) {
     require_once('template-parts/header.php');
